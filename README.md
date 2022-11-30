@@ -1,8 +1,7 @@
-# Agent-Based Modeling and Social System Simulation 2019 (Template)
-(text between brackets to be removed)
+# Agent-Based Modeling and Social System Simulation 2022
 
-> * Group Name: (be creative!)
-> * Group participants names: (alphabetically sorted by last name)
+> * Group Name: Duology
+> * Group participants names: Nikhil Sethukumar, Vishnu Varadan
 > * Project Title: (can be changed later)
 
 ## General Introduction
