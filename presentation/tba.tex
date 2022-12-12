@@ -1,0 +1,195 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usefonttheme[onlymath]{serif}
+\graphicspath{ {images/} }
+\setbeamertemplate{enumerate items}[square]
+
+\newcommand{\p}[2][1]{\begin{center}\includegraphics[width=#1\linewidth]{#2}\end{center}}
+
+\title[Chaos and Atmospheric predictability]{Chaos theory and Atmospheric predictability}
+\subtitle{ME5127 Term paper}
+\author[Nikhil S]{Nikhil S \textcolor{darkgray}{(ME17B077)}}
+\institute{IITM}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+{\textbf{A}periodic Map}
+\only<1>{Let us consider a simple function:}
+\[\mathrm{f}(x)=4x(1-x) ,\qquad \mathrm{f}: [0,1]\to[0,1]\]
+\only<2-3,5>{
+\begin{itemize}
+\item<2-> $x=0.4$
+\item<2-> $\mathrm{f}(x)=0.96$, $\mathrm{f}(\mathrm{f}(x))=0.1536$
+\item<3-> $\{0.4,0.96,0.1536,0.520028,0.998395,0.00640774\}$
+\item<5-> Now we also take \textcolor{yellow}{$x_0=0.40001$} alongside \textcolor{teal}{$x_0=0.4$}
+\end{itemize}}
+\only<4>{\p[0.85]{chinmath1}}
+\only<6>{\p[0.77]{chinmath2}}
+\end{frame}
+
+\begin{frame}
+{Chaos in a Double pendulum}
+\only<1>{We considered a discretised system before, now we shall look at a continuous (\emph{in time}) system.}
+
+\only<2->{
+\begin{columns}
+\column{0.3\linewidth}
+\p{DPWork}
+\column{0.7\linewidth}
+\only<2>{
+We use Lagrangian mechanics for the formulation:
+\small
+\begin{align*}
+\mathcal{T} &= \frac{1}{2} l^2 m \left(2 \left(\theta _1'\right){}^2+\left(\theta _2'\right){}^2+2 \theta _2' \theta _1' \cos \left(\theta _1-\theta _2\right)\right)\\
+\mathcal{V} &= -g l m \left(2 \cos \left(\theta _1\right)+\cos \left(\theta _2\right)\right)\\
+\mathcal{L}&=\mathcal{T}-\mathcal{V}\\
+\end{align*}
+\normalsize
+Now the Euler-Lagrange equations:
+\[\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial \mathcal{L}}{\partial q'}\right)-\frac{\partial \mathcal{L}}{\partial q}=0\]
+with $q=\theta_1,\,\theta_2$.
+
+And time is also rescaled as $t\to \sqrt{\frac{l}{g}}\tau$ in the equations of motion}
+
+\only<3-4>{
+The equations of motion are:
+\tiny
+\begin{align*}
+\left(\theta _2'\right){}^2 \sin \left(\theta _1-\theta _2\right)+2 \theta _1''+\theta _2'' \cos \left(\theta _1-\theta _2\right)+2 \sin \left(\theta _1\right)&=0 \\
+\left(\theta _1'\right){}^2 \left(-\sin \left(\theta _1-\theta _2\right)\right)+\theta _2''+\theta _1'' \cos \left(\theta _1-\theta _2\right)+\sin \left(\theta _2\right)&=0 
+\end{align*}
+\normalsize
+\only<4>{
+\vfill
+We consider the following initial conditions:
+\begin{table}
+\centering
+\begin{tabular}{|c |c c c c|}
+\hline
+\textsf{Initial conditions}& $\theta_1(0)$ & $\theta_2(0)$& $\theta_1'(0)$ & $\theta_2'(0)$\\\hline
+System 1&$120^\circ$&$80^\circ$&0&0\\
+System 2&$120.1^\circ$&$79.9^\circ$&0&0\\\hline
+\end{tabular}
+\end{table}
+}
+}
+\only<5>
+{\p{DPq1}
+\p{DPq2}
+}
+\end{columns}}
+
+\end{frame}
+
+\begin{frame}
+{Features of Chaos}
+\begin{definition}
+\textbf{Chaos} is aperiodic long-term behaviour in a deterministic system that exhibits sensitive dependence on initial conditions.
+\end{definition}
+
+\setbeamercovered{transparent}
+\begin{enumerate}
+\item<2-> Aperiodic long-term behaviour
+
+\only<2>{\textcolor{darkgray}{There are trajectories
+which do not settle down to fixed points, periodic orbits, or quasiperiodic orbits as $t\to\infty$}}
+\item<3-> ``Deterministic"
+
+\only<3>{\textcolor{darkgray}{The system has no random or noisy
+inputs or parameters. The irregular behavior arises from the system’s
+nonlinearity, rather than from noisy driving forces}}
+\item<4-> Sensitive dependence on initial conditions
+
+\only<4>{\textcolor{darkgray}{Nearby trajectories separate exponentially fast}}
+\end{enumerate}
+
+
+\setbeamercovered{invisible}
+\end{frame}
+
+\begin{frame}
+{Lorenz's work}
+\only<-4>{
+\begin{itemize}
+\item<1-> Edward Lorenz was a meteorologist at MIT. He noticed an anomaly in his work in 1961
+\item<2-> He pursued the reason behind it, publishing a paper in 1962, \textbf{`Deterministic non-periodic flow'}
+\item<3-> He studied a skeletal form of Saltzman's convection equations:
+\begin{align*}
+\frac{\partial}{\partial t} \nabla^{2} \psi &=-\frac{\partial\left(\psi, \nabla^{2} \psi\right)}{\partial(x, z)}+\nu \nabla^{4} \psi+g \alpha \frac{\partial \theta}{\partial x} \\
+\frac{\partial}{\partial t}&=-\frac{\partial(\psi, \theta)}{\partial(x, z)}+\frac{\Delta T}{H} \frac{\partial \psi}{\partial x}+\kappa \nabla^{2} \theta
+\end{align*}
+\item<4-> Which, after much simplification, transformed to 
+\begin{align*}
+\dot{x}&=\sigma(y-x)\\
+\dot{y}&=r x-y-x z\\
+\dot{z}&=x y-b z
+\end{align*}
+with $\sigma,r,b>0$, all of which are parameters.
+\end{itemize}
+}
+
+\only<5->
+{
+\begin{figure}
+\centering
+\includegraphics[width=0.45\linewidth]{LAttract1}
+\includegraphics[width=0.45\linewidth]{LAttract2}
+
+\caption{Lorenz attractors for $\sigma=10, b=8/3,r=28$ and initial conditions \textcolor{teal}{(0,1,0)} and \textcolor{yellow}{(1,0,0)}}
+\label{LAttract}
+\end{figure}
+}
+\end{frame}
+
+\begin{frame}
+{Atmospheric predictability}
+\only<1>{
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{Athirappally}
+\caption{Athirapally Falls on 7-3-2021, \textit{Photo: Nikhil S}}
+\end{figure}}
+
+\only<2->
+{
+\only<2-3>{
+\begin{itemize}
+\item Even if we know the positions of all particles in the river, we can only know them to a finite accuracy
+\item As time goes on, the errors multiply and increase exponentially
+\end{itemize}}
+
+\begin{block}<3->
+{Lorenz concludes:}
+When our results concerning the instability of non-periodic flow are applied to the atmosphere, which is
+ostensibly nonperiodic, they indicate that prediction of
+the 
+\textit{sufficiently distant future is impossible by any
+method, unless the present conditions are known exactly}. In view of the inevitable inaccuracy and incompleteness of weather observations, \textbf{precise very-long-range forecasting would seem to be non-existent}.
+\end{block}
+}
+\only<4>{
+\vfill 
+
+The European Centre’s assessments suggested that the world saved billions of dollars each year from predictions that were statistically better than nothing. But beyond \underline{two or three days} the world’s best forecasts were speculative.\hfill \ldots [James Gleick, 1987]
+}
+\end{frame}
+
+\begin{frame}
+\vfill
+\LARGE
+\begin{center}
+\includegraphics[width=0.4\textwidth]{End}
+\\[1cm]
+\includegraphics[width=0.27\textwidth]{Thanks}
+\\[1cm]
+\includegraphics[width=0.3\textwidth]{Name}
+\end{center} 
+\end{frame}
+
+\end{document}
