@@ -14,7 +14,7 @@ Braess's Paradox is an unintuitive occurrence in a specific class of congestion 
 
 > ON Earth Day this year, New York City's Transportation Commissioner decided to close 42d Street, which as every New Yorker knows is always congested. ... But to everyone's surprise, Earth Day generated no historic traffic jam. Traffic flow actually improved when 42d Street was closed. [^nytimes]
 
-[^nytimes]: An excerpt from an article in the 25 Dec 1990 issue of _The New York Times_. 
+[^nytimes]: An excerpt from an [article in the 25 Dec 1990 issue of _The New York Times_](https://www.nytimes.com/1990/12/25/health/what-if-they-closed-42d-street-and-nobody-noticed.html). 
 
 So we see that the problem is indeed of great relevance. We attempt to solve this problem by allowing cooperation and interaction between the agents.
 
