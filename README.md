@@ -51,9 +51,9 @@ We expect that the cost decreases with increasing cooperation between the agents
 
 ## References 
 
-(Add the bibliographic references you intend to use)
+<!-- (Add the bibliographic references you intend to use)
 (Explain possible extension to the above models)
-(Code / Projects Reports of the previous year)
+(Code / Projects Reports of the previous year) -->
 
 - Hespanha, Jo ̃ao P.
   Noncooperative Game Theory: An Introduction for Engineers and Computer Scientists. Princeton University Press, 2017. (https://doi.org/10.2307/j.ctt1vwmgbh)
