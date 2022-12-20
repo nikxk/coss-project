@@ -65,3 +65,7 @@ We expect that the cost decreases with increasing cooperation between the agents
 ## Research Methods
 
 Agent-Based Model
+
+## Results
+
+Our results are summarised in the [project report](/report/report.pdf).
